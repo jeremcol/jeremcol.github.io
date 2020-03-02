@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>Keren 配准算法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="Keren配准算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keren 配准算法">
+<meta property="og:url" content="http://yoursite.com/2020/03/02/Keren-%E9%85%8D%E5%87%86%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Keren配准算法">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2320453013,1388850119&fm=26&gp=0.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190311194213611.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190311194235499.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190311194250387.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190311194311190.png">
+<meta property="article:published_time" content="2020-03-02T05:33:11.000Z">
+<meta property="article:modified_time" content="2020-03-02T05:42:33.513Z">
 <meta property="article:author" content="Jeremy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2320453013,1388850119&fm=26&gp=0.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -158,76 +168,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Keren-配准算法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Keren 配准算法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/02/Keren-%E9%85%8D%E5%87%86%E7%AE%97%E6%B3%95/" class="archive-article-date">
+
+        
+        <a href="/2020/03/02/Keren-%E9%85%8D%E5%87%86%E7%AE%97%E6%B3%95/" class="archive-article-date">
   	<time datetime="2020-03-02T05:33:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/Keren-%E9%85%8D%E5%87%86%E7%AE%97%E6%B3%95/">Keren 配准算法</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Keren配准算法"><a href="#Keren配准算法" class="headerlink" title="Keren配准算法"></a><strong><em>Keren配准算法</em></strong></h3><a id="more"></a>
+<p><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2320453013,1388850119&fm=26&gp=0.jpg" alt="配准"><br>Keren算法是一种梯度算法，它在平移变换模型的基础上扩展到旋转-平移模型。Keren算法采用了泰勒展开及近似的思想，通过连续使用两次泰勒展开并取近似后得到闭式解公式。原始配准公式与近似结果分别如公式（1）和（2）所示<br><img src="https://img-blog.csdnimg.cn/20190311194213611.png" alt="在这里插入图片描述"><br>其中f(x,y)和g(x,y)分别表示两幅图像的灰度分布，x_0为水平偏移，y_0为竖直偏移，θ_0为旋转角度。<br>将公式（3）在(x,y)处做泰勒级数展开，并取一阶近似后：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190311194235499.png" alt="在这里插入图片描述"><br>计算近似表达式（3）与原式的误差平方和并对x_0 、y_0和θ_0求取偏导数，忽略非线性项后联立求解得到线性方程组，如公式（4）：<br> <img src="https://img-blog.csdnimg.cn/20190311194250387.png" alt="在这里插入图片描述"><br>其中，<img src="https://img-blog.csdnimg.cn/20190311194311190.png" alt="在这里插入图片描述">。解该线性方程可以获得x_0 、y_0和θ_0的估计值。<br>由于是基于泰勒展开及近似求取得到的各个量的估计值，所以只有在小角度偏转及平移情况下Keren算法才有较好的配准效果。</p>
+<h4 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a><strong>主函数</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">clc;</span><br><span class="line">close all;</span><br><span class="line">clear all;    </span><br><span class="line">num &#x3D; 2;</span><br><span class="line">S &#x3D; cell(num,1);</span><br><span class="line">S0 &#x3D; cell(num,1);</span><br><span class="line">path1 &#x3D; &#39;E:\&#39;;</span><br><span class="line"></span><br><span class="line">for i &#x3D; 1:num</span><br><span class="line">     S&#123;i&#125; &#x3D; imread([path1,num2str(i),&#39;.jpg&#39;]);</span><br><span class="line">     OO &#x3D; size(S&#123;i&#125;,3);</span><br><span class="line">     if OO &#x3D;&#x3D; 3</span><br><span class="line">        S&#123;i&#125; &#x3D; im2double(rgb2gray(S&#123;i&#125;));</span><br><span class="line">     else </span><br><span class="line">         S&#123;i&#125; &#x3D; im2double((S&#123;i&#125;));</span><br><span class="line">     end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">[delta_est, phi_est] &#x3D; keren(S);</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h4 id="keren函数"><a href="#keren函数" class="headerlink" title="keren函数"></a><strong>keren函数</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">function [delta_est, phi_est] &#x3D; keren(im)</span><br><span class="line"></span><br><span class="line">for imnr &#x3D; 2:length(im)</span><br><span class="line"></span><br><span class="line">    lp &#x3D; fspecial(&#39;ga&#39;,5,1);</span><br><span class="line">    im0&#123;1&#125; &#x3D; im&#123;1&#125;;</span><br><span class="line">    im1&#123;1&#125; &#x3D; im&#123;imnr&#125;;</span><br><span class="line">    for i&#x3D;2:3</span><br><span class="line">        im0&#123;i&#125; &#x3D; imresize(conv2(im0&#123;i-1&#125;,lp,&#39;same&#39;),0.5,&#39;bicubic&#39;);</span><br><span class="line">        im1&#123;i&#125; &#x3D; imresize(conv2(im1&#123;i-1&#125;,lp,&#39;same&#39;),0.5,&#39;bicubic&#39;);</span><br><span class="line">    end</span><br><span class="line">    </span><br><span class="line">    stot &#x3D; zeros(1,3);</span><br><span class="line">    % do actual registration, based on pyramid</span><br><span class="line">    for pyrlevel&#x3D;3:-1:1</span><br><span class="line">        f0 &#x3D; im0&#123;pyrlevel&#125;;</span><br><span class="line">        f1 &#x3D; im1&#123;pyrlevel&#125;;</span><br><span class="line">        </span><br><span class="line">        [y0,x0]&#x3D;size(f0);</span><br><span class="line">        xmean&#x3D;x0&#x2F;2; ymean&#x3D;y0&#x2F;2;</span><br><span class="line">        x&#x3D;kron([-xmean:xmean-1],ones(y0,1));</span><br><span class="line">        y&#x3D;kron(ones(1,x0),[-ymean:ymean-1]&#39;);</span><br><span class="line">     </span><br><span class="line">        sigma&#x3D;1;  </span><br><span class="line">        g1 &#x3D; zeros(y0,x0); g2 &#x3D; g1; g3 &#x3D; g1;</span><br><span class="line">        for i&#x3D;1:y0</span><br><span class="line">            for j&#x3D;1:x0</span><br><span class="line">                g1(i,j)&#x3D;-exp(-((i-ymean)^2+(j-xmean)^2)&#x2F;(2*sigma^2))*(i-ymean)&#x2F;2&#x2F;pi&#x2F;sigma^2; % d&#x2F;dy</span><br><span class="line">                g2(i,j)&#x3D;-exp(-((i-ymean)^2+(j-xmean)^2)&#x2F;(2*sigma^2))*(j-xmean)&#x2F;2&#x2F;pi&#x2F;sigma^2; % d&#x2F;dx</span><br><span class="line">                g3(i,j)&#x3D; exp(-((i-ymean)^2+(j-xmean)^2)&#x2F;(2*sigma^2))&#x2F;2&#x2F;pi&#x2F;sigma^2;</span><br><span class="line">            end</span><br><span class="line">        end</span><br><span class="line">        </span><br><span class="line">        a&#x3D;real(ifft2(fft2(f1).*fft2(g2)));  </span><br><span class="line">        c&#x3D;real(ifft2(fft2(f1).*fft2(g1))); </span><br><span class="line">        b&#x3D;real(ifft2(fft2(f1).*fft2(g3)))-real(ifft2(fft2(f0).*fft2(g3))); </span><br><span class="line">        R&#x3D;c.*x-a.*y; % df1&#x2F;dy*x-df1&#x2F;dx*y</span><br><span class="line">        </span><br><span class="line">        a11 &#x3D; sum(sum(a.*a)); a12 &#x3D; sum(sum(a.*c)); a13 &#x3D; sum(sum(R.*a));</span><br><span class="line">        a21 &#x3D; sum(sum(a.*c)); a22 &#x3D; sum(sum(c.*c)); a23 &#x3D; sum(sum(R.*c)); </span><br><span class="line">        a31 &#x3D; sum(sum(R.*a)); a32 &#x3D; sum(sum(R.*c)); a33 &#x3D; sum(sum(R.*R));</span><br><span class="line">        b1 &#x3D; sum(sum(a.*b)); b2 &#x3D; sum(sum(c.*b)); b3 &#x3D; sum(sum(R.*b));</span><br><span class="line">        Ainv &#x3D; [a11 a12 a13; a21 a22 a23; a31 a32 a33]^(-1);</span><br><span class="line">        s &#x3D; Ainv*[b1; b2; b3];</span><br><span class="line">        st &#x3D; s;</span><br><span class="line">        </span><br><span class="line">        it&#x3D;1;</span><br><span class="line">        while ((abs(s(1))+abs(s(2))+abs(s(3))*180&#x2F;pi&#x2F;20&gt;0.1)&amp;it&lt;25)</span><br><span class="line">            % first shift and then rotate, because we treat the reference image</span><br><span class="line">            f0_ &#x3D; shift(f0,-st(1),-st(2));</span><br><span class="line">            f0_ &#x3D; imrotate(f0_,-st(3)*180&#x2F;pi,&#39;bicubic&#39;,&#39;crop&#39;);</span><br><span class="line">            b &#x3D; real(ifft2(fft2(f1).*fft2(g3)))-real(ifft2(fft2(f0_).*fft2(g3)));</span><br><span class="line">            s &#x3D; Ainv*[sum(sum(a.*b)); sum(sum(c.*b)); sum(sum(R.*b))];</span><br><span class="line">            st &#x3D; st+s;</span><br><span class="line">            it &#x3D; it+1;</span><br><span class="line">        end</span><br><span class="line">        % it</span><br><span class="line">        </span><br><span class="line">        st(3)&#x3D;-st(3)*180&#x2F;pi;</span><br><span class="line">        st &#x3D; st&#39;;</span><br><span class="line">        st(1:2) &#x3D; st(2:-1:1);</span><br><span class="line">        stot &#x3D; [2*stot(1:2)+st(1:2) stot(3)+st(3)];</span><br><span class="line">        if pyrlevel&gt;1</span><br><span class="line">            % first rotate and then shift, because this is cancelling the</span><br><span class="line">            % motion on the image to be registered</span><br><span class="line">            im1&#123;pyrlevel-1&#125; &#x3D; imrotate(im1&#123;pyrlevel-1&#125;,-stot(3),&#39;bicubic&#39;,&#39;crop&#39;);</span><br><span class="line">            im1&#123;pyrlevel-1&#125; &#x3D; shift(im1&#123;pyrlevel-1&#125;,2*stot(2),2*stot(1)); % twice the parameters found at larger scale</span><br><span class="line">        end</span><br><span class="line">    end</span><br><span class="line">      delta_est(imnr,:) &#x3D; stot(1:2)</span><br><span class="line">    phi_est(imnr) &#x3D; stot(3);</span><br><span class="line">    </span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 
+
+<p><strong>shift函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">function im2 &#x3D; shift(im1,x1,y1)</span><br><span class="line"></span><br><span class="line">[y0,x0,z0]&#x3D;size(im1);</span><br><span class="line"></span><br><span class="line">x1int&#x3D;floor(x1); x1dec&#x3D;x1-x1int;</span><br><span class="line">y1int&#x3D;floor(y1); y1dec&#x3D;y1-y1int;</span><br><span class="line">im2&#x3D;im1;</span><br><span class="line"></span><br><span class="line">for z&#x3D;1:z0</span><br><span class="line"> if y1&gt;&#x3D;0   </span><br><span class="line">   for y&#x3D;-y0:-y1int-2</span><br><span class="line">       im2(-y,:,z)&#x3D;(1-y1dec)*im2(-y1int-y,:,z)+y1dec*im2(-y1int-y-1,:,z);</span><br><span class="line">   end</span><br><span class="line">   if y1int&lt;y0</span><br><span class="line">       im2(y1int+1,:,z)&#x3D;(1-y1dec)*im2(1,:,z);</span><br><span class="line">   end</span><br><span class="line">   for y&#x3D;max(-y1int,-y0):-1</span><br><span class="line">       im2(-y,:,z)&#x3D;zeros(1,x0);</span><br><span class="line">   end</span><br><span class="line"> else</span><br><span class="line">   if y1dec&#x3D;&#x3D;0</span><br><span class="line">       y1dec&#x3D;y1dec+1;</span><br><span class="line">       y1int&#x3D;y1int-1;</span><br><span class="line">   end</span><br><span class="line">   for y&#x3D;1:y0+y1int</span><br><span class="line">       im2(y,:,z)&#x3D;y1dec*im2(-y1int+y-1,:,z)+(1-y1dec)*im2(-y1int+y,:,z);</span><br><span class="line">   end</span><br><span class="line">   if -y1int&lt;&#x3D;y0</span><br><span class="line">       im2(y0+y1int+1,:,z)&#x3D;y1dec*im2(y0,:,z);</span><br><span class="line">   end</span><br><span class="line">   for y&#x3D;max(1,y0+y1int+2):y0</span><br><span class="line">       im2(y,:,z)&#x3D;zeros(1,x0);        </span><br><span class="line">   end</span><br><span class="line"> end</span><br><span class="line"> if x1&gt;&#x3D;0   </span><br><span class="line">   for x&#x3D;-x0:-x1int-2</span><br><span class="line">       im2(:,-x,z)&#x3D;(1-x1dec)*im2(:,-x1int-x,z)+x1dec*im2(:,-x1int-x-1,z);</span><br><span class="line">   end</span><br><span class="line">   if x1int&lt;x0</span><br><span class="line">       im2(:,x1int+1,z)&#x3D;(1-x1dec)*im2(:,1,z);</span><br><span class="line">   end</span><br><span class="line">   for x&#x3D;max(-x1int,-x0):-1</span><br><span class="line">       im2(:,-x,z)&#x3D;zeros(y0,1);</span><br><span class="line">   end</span><br><span class="line"> else</span><br><span class="line">   if x1dec&#x3D;&#x3D;0</span><br><span class="line">       x1dec&#x3D;x1dec+1;</span><br><span class="line">       x1int&#x3D;x1int-1;</span><br><span class="line">   end</span><br><span class="line">   for x&#x3D;1:x0+x1int</span><br><span class="line">       im2(:,x,z)&#x3D;x1dec*im2(:,-x1int+x-1,z)+(1-x1dec)*im2(:,-x1int+x,z);</span><br><span class="line">   end</span><br><span class="line">   if -x1int&lt;&#x3D;x0</span><br><span class="line">       im2(:,x0+x1int+1,z)&#x3D;x1dec*im2(:,x0,z);</span><br><span class="line">   end</span><br><span class="line">   for x&#x3D;max(1,x0+x1int+2):x0</span><br><span class="line">       im2(:,x,z)&#x3D;zeros(y0,1);        </span><br><span class="line">   end</span><br><span class="line"> end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">****直接运行主函数   ，同文件夹放两张图片，命名1 和2。2为需要配准的图片。****</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixinpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=300x300&data=http://jeremcol.github.io/2020/03/02/Keren-%E9%85%8D%E5%87%86%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/01/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-01T07:49:14.087Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Keren配准算法"><span class="toc-number">1.</span> <span class="toc-text">Keren配准算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#主函数"><span class="toc-number">1.1.</span> <span class="toc-text">主函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#keren函数"><span class="toc-number">1.2.</span> <span class="toc-text">keren函数</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -253,8 +375,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
